@@ -1,16 +1,13 @@
-import React from "react";
-import BookList from "./components/BookList";
-import "./App.css";
-
+import React from 'react';
+import BookList from './components/BookList';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <BookList/>
+      <BookList />
     </div>
   );
 }
-
-
 
 export default App;
