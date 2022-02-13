@@ -1,5 +1,7 @@
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { BOOK_TITLES } from '../appolo/typeDefs';
+
 
 const BookList = () => {
   const { loading, error, data } = useQuery(BOOK_TITLES);
@@ -12,13 +14,5 @@ const BookList = () => {
     </div>
   ));
 };
-
-const BOOK_TITLES = gql`
-  query ExampleQuery {
-    books {
-      title
-    }
-  }
-`;
 
 export default BookList;
