@@ -12,17 +12,23 @@ const typeDefs = gql`
     author: String
   }
 
+  type Writer {
+    name: String
+    books: [String]
+  }
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
-    books: [Book]
+    books: [Book],
+    writers: [Writer],
   }
 `;
 
 const resolvers = {
   Query: {
     books: () => books,
+    writers: () => writers,
   },
 };
 
@@ -37,11 +43,22 @@ server.listen().then(({ url }) => {
 
 const books = [
   {
-    title: "The Awakening The Aeakening",
+    title: "The Awakening",
     author: "Kate Chopin",
   },
   {
     title: "City of Glass",
     author: "Paul Auster",
+  },
+];
+
+ const writers = [
+  {
+    name: "Kate Chopin",
+    books: ["The Awakening"],
+  },
+  {
+    name: "Paul Auster",
+    books: ["Paul Auster"],
   },
 ];

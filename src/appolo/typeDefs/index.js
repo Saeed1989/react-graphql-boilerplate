@@ -7,3 +7,11 @@ export const BOOK_TITLES = gql`
     }
   }
 `;
+
+export const WRITER_NAMES = gql`
+  query ExampleQuery {
+    writers {
+      name
+    }
+  }
+`;
