@@ -53,7 +53,7 @@ Your app is ready to be deployed!
 
 ## License
 
-This project is [MIT licensed](https://github.com/Saeed1989/react-graphql-boilerplate/blob/main/client-end/LICENSE).
+This project is [MIT licensed](https://github.com/Saeed1989/react-graphql-boilerplate/blob/main//LICENSE).
 
 [node.js]: http://nodejs.org
 [docker]: https://www.docker.com
