@@ -1,20 +1,23 @@
 import React from 'react';
+import { Typography, Row, Col } from 'antd';
 import BookList from './components/BookList';
 import WriterList from './components/WriterList';
 import './App.css';
 
+const { Title } = Typography;
+
 function App() {
   return (
-    <div>
-      <div>
-        <h1>Book List:</h1>
+    <Row>
+      <Col>
+        <Title level={2}>Book List:</Title>
         <BookList />
-      </div>
-      <div>
-        <h1>Writer List:</h1>
+      </Col>
+      <Col>
+        <Title level={2}>Writer List:</Title>
         <WriterList />
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 }
 
