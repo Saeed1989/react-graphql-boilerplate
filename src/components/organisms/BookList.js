@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { BOOK_TITLES } from '../../appolo/typeDefs';
+import Book from '../molecules/Book';
 
 const BookList = () => {
   const { loading, error, data } = useQuery(BOOK_TITLES);
@@ -9,7 +10,7 @@ const BookList = () => {
 
   return data.books.map((book) => (
     <div key={book.title}>
-      <p>{book.title}</p>
+      <Book book={book}></Book>
     </div>
   ));
 };

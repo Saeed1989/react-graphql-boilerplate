@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { WRITER_NAMES } from '../../appolo/typeDefs';
+import Writer from '../molecules/Writer';
 
 const WriterList = () => {
   const { loading, error, data } = useQuery(WRITER_NAMES);
@@ -9,7 +10,7 @@ const WriterList = () => {
 
   return data.writers.map((writer) => (
     <div key={writer.name}>
-      <p>{writer.name}</p>
+      <Writer writer={writer}></Writer>
     </div>
   ));
 };
