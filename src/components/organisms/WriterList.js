@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { WRITER_NAMES } from '../appolo/typeDefs';
-
+import { WRITER_NAMES } from '../../appolo/typeDefs';
 
 const WriterList = () => {
   const { loading, error, data } = useQuery(WRITER_NAMES);

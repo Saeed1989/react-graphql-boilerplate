@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { BOOK_TITLES } from '../appolo/typeDefs';
-
+import { BOOK_TITLES } from '../../appolo/typeDefs';
 
 const BookList = () => {
   const { loading, error, data } = useQuery(BOOK_TITLES);

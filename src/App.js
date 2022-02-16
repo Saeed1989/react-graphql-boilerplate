@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Row, Col } from 'antd';
-import BookList from './components/BookList';
-import WriterList from './components/WriterList';
+import BookList from './components/organisms/BookList';
+import WriterList from './components/organisms/WriterList';
 import './App.css';
 
 const { Title } = Typography;
