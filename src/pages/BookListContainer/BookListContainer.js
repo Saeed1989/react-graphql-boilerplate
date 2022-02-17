@@ -1,5 +1,8 @@
 import React from 'react';
+import { Typography } from 'antd';
 import BookList from '../../components/organisms/BookList';
+
+const { Title } = Typography;
 
 const BookListContainer = () => {
   // const { loading, error, data } = useQuery(BOOK_TITLES);
@@ -8,7 +11,8 @@ const BookListContainer = () => {
 
   return (
     <>
-      <BookList/>
+      <Title level={3}>Books:</Title>
+      <BookList />
     </>
   );
 };

@@ -7,7 +7,6 @@ import { Layout, Button, Space } from 'antd';
 import './App.css';
 import Home from './pages/Home/Home';
 
-const { Title } = Typography;
 const { Header, Footer } = Layout;
 const WriterListPage = WriterListContainer();
 const BookListPage = BookListContainer();
