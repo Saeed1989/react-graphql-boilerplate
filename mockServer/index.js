@@ -8,12 +8,18 @@ const typeDefs = gql`
 
   # This "Book" type defines the queryable fields for every book in our data source.
   type Book {
+    sku: String
     title: String
+    edition: String
+    publishDate: String
     author: String
   }
 
   type Writer {
+    sku: String
     name: String
+    country: String
+    dateOfBirth: String
     books: [String]
   }
   # The "Query" type is special: it lists all of the available queries that
@@ -43,22 +49,34 @@ server.listen().then(({ url }) => {
 
 const books = [
   {
-    title: "The Awakening",
-    author: "Kate Chopin",
+    sku: "sampleSKU001",
+    title: "The Book AAA",
+    edition: "First",
+    publishDate: "1944-01-01T00:00:00.000Z",
+    author: "The Author AAA",
   },
   {
-    title: "City of Glass",
-    author: "Paul Auster",
+    sku: "sampleSKU002",
+    title: "The Book BBB",
+    edition: "Second",
+    publishDate: "1965-01-01T00:00:00.000Z",
+    author: "The Author BBB",
   },
 ];
 
  const writers = [
   {
-    name: "Kate Chopin",
-    books: ["The Awakening"],
+    sku: "sampleSKU001",
+    name: "The Author AAA",
+    country: "Country AAA",
+    dateOfBirth: "1921-01-01T00:00:00.000Z",
+    books: ["The Book AAA"],
   },
   {
-    name: "Paul Auster",
-    books: ["Paul Auster"],
+    sku: "sampleSKU002",
+    name: "The Author BBB",
+    country: "Country BBB",
+    dateOfBirth: "1956-01-01T00:00:00.000Z",
+    books: ["The Book BBB1", "The Book BBB2", "The Book BBB3"],
   },
 ];
