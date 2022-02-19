@@ -51,6 +51,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
+## Mock api server
+
+In the "mockServer" directory, you can run:
+
+### `node index`
+
 ## License
 
 This project is [MIT licensed](https://github.com/Saeed1989/react-graphql-boilerplate/blob/main//LICENSE).
