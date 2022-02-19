@@ -4,7 +4,7 @@ import { WRITER_NAMES } from '../../appolo/typeDefs';
 import Writer from '../molecules/Writer';
 
 const WriterList = () => {
-  const { loading, error, data } = useQuery(WRITER_NAMES);
+  const { loading, error, data } = useQuery(WRITER_NAMES, { fetchPolicy: 'cache-and-network' });
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 

@@ -4,7 +4,7 @@ import { BOOK_TITLES } from '../../appolo/typeDefs';
 import Book from '../molecules/Book';
 
 const BookList = () => {
-  const { loading, error, data } = useQuery(BOOK_TITLES);
+  const { loading, error, data } = useQuery(BOOK_TITLES, { fetchPolicy: 'cache-and-network' });
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
