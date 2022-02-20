@@ -1,18 +1,18 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import { BOOK_TITLES } from '../../appolo/typeDefs';
 import { Typography } from 'antd';
 import BookList from '../../components/organisms/BookList';
 
 const { Title } = Typography;
 
 const BookListContainer = () => {
-  // const { loading, error, data } = useQuery(BOOK_TITLES);
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error :(</p>;
+  const { loading, error, data } = useQuery(BOOK_TITLES, { fetchPolicy: 'cache-and-network' });
 
   return (
     <>
       <Title level={3}>Books:</Title>
-      <BookList />
+      <BookList loading={loading} error={error} data={data}/>
     </>
   );
 };

@@ -14,9 +14,6 @@ import Home from './pages/Home/Home';
 import initCache from './appolo/cache';
 
 const { Header, Footer } = Layout;
-const WriterListPage = WriterListContainer();
-const BookListPage = BookListContainer();
-const HomePage = Home();
 
 function App() {
   const [client, setClient] = useState();
@@ -50,9 +47,9 @@ function App() {
         </Header>
         <Router>
           <Routes>
-            <Route exact path="/" element={HomePage} />
-            <Route exact path="/writers" element={WriterListPage} />
-            <Route exact path="/books" element={BookListPage} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/writers" element={<WriterListContainer />} />
+            <Route exact path="/books" element={<BookListContainer />} />
           </Routes>
         </Router>
         <Footer />

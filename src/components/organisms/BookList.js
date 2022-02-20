@@ -1,10 +1,9 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { BOOK_TITLES } from '../../appolo/typeDefs';
 import Book from '../molecules/Book';
 
-const BookList = () => {
-  const { loading, error, data } = useQuery(BOOK_TITLES, { fetchPolicy: 'cache-and-network' });
+const BookList = (props) => {
+  const { loading, error, data } = props;
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
