@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import { BOOK_TITLES } from '../../appolo/typeDefs';
 import { Typography } from 'antd';
 import BookList from '../../components/organisms/BookList';
+import BookOption from '../../components/organisms/BookOptions';
 
 const { Title } = Typography;
 
@@ -11,8 +12,10 @@ const BookListContainer = () => {
 
   return (
     <>
-      <Title level={3}>Books:</Title>
-      <BookList loading={loading} error={error} data={data}/>
+      <Title level={3}>Book Options:</Title>
+      <BookOption />
+      <Title level={3}>Books List:</Title>
+      <BookList loading={loading} error={error} data={data} />
     </>
   );
 };
