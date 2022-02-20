@@ -1,9 +1,12 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 
-const WriterOption = () => {
+const WriterOption = (props) => {
+  const {onSubmit} = props;
+
   const onFinish = (values) => {
     console.log('Success:', values);
+    onSubmit(values);
   };
 
   const onFinishFailed = (errorInfo) => {
