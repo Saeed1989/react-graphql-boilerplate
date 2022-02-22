@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Typography } from 'antd';
 import { useQuery } from '@apollo/client';
 import { WRITER_NAMES } from '../../appolo/typeDefs';
@@ -8,10 +8,10 @@ import WriterOption from '../../components/organisms/WriterOptions';
 const { Title } = Typography;
 
 const WriterListContainer = () => {
-  const [options, setOptions] = useState(null);
-  const writerOpHandler= (options) => {
+  const [options, setOptions] = useState();
+  const writerOpHandler = (options) => {
     setOptions(options);
-  }
+  };
 
   return (
     <>

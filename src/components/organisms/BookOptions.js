@@ -1,44 +1,29 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import Options from '../molecules/Options';
 
-const BookOption = () => {
+const BookOption = (props) => {
+  const { onSubmit } = props;
+
   const onFinish = (values) => {
-    console.log('Success:', values);
+    onSubmit(values);
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
-
-  const plainOptions = [
+  const availabelOptions = [
     { label: 'Title', value: 'title', disabled: true },
     { label: 'Edition', value: 'edition' },
     { label: 'Publish Date', value: 'publishDate' },
     { label: 'Author', value: 'author' },
   ];
 
-  const initialValues = { writerOptions: ['title'] };
+  const initialValues = { bookOptions: ['title'] };
 
   return (
-    <Form
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
+    <Options
+      formName={'bookOptions'}
+      options={availabelOptions}
       initialValues={initialValues}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-      <Form.Item name="writerOptions" wrapperCol={{ offset: 8, span: 16 }}>
-        <Checkbox.Group options={plainOptions} />
-      </Form.Item>
-
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
+      onSubmit={(options) => onFinish(options)}
+    ></Options>
   );
 };
 
