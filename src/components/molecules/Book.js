@@ -1,13 +1,14 @@
 import React from 'react';
-import { Typography } from 'antd';
-
-const { Title } = Typography;
+import LvItem from '../atoms/LvItem';
 
 const Book = (props) => {
   const { book } = props;
   return (
     <>
-      <Title level={4}>{book.title}</Title>
+    <LvItem label={"Title"} value={book.title}/>
+    <LvItem label={"Author"} value={book.author}/>
+    <LvItem label={"Edition"} value={book.edition}/>
+    <LvItem label={"Publication Date"} value={book.publishDate}/>
     </>
   );
 };
