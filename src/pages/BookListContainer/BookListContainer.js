@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { BOOK_TITLES } from '../../appolo/typeDefs';
 import { Typography } from 'antd';
 import BookList from '../../components/organisms/BookList';
 import BookOption from '../../components/organisms/BookOptions';
+import { buildGrapQlVariables } from '../../utils/convertUtils/queryUtils';
 
 const { Title } = Typography;
 
@@ -12,11 +13,16 @@ const BookListContainer = () => {
   const bookOpHandler = (options) => {
     setOptions(options);
   };
-  
+
   return (
     <>
-      <Title level={3}>Book Options:</Title>
-      <BookOption onSubmit={(options) => bookOpHandler(options)}/>
+      {!options ? (
+        <>
+          <Title level={3}>Book Options:</Title>
+          <BookOption onSubmit={(options) => bookOpHandler(options)} />
+        </>
+      ) : null}
+
       <Title level={3}>Books List:</Title>
       <>{!options ? <p>Please select and submit options</p> : <Books options={options} />}</>
     </>
@@ -25,7 +31,13 @@ const BookListContainer = () => {
 
 const Books = (props) => {
   const { options } = props;
-  const { loading, error, data } = useQuery(BOOK_TITLES, { fetchPolicy: 'cache-and-network' });
+  const queryVariables = buildGrapQlVariables(options);
+  console.log(queryVariables);
+  const { loading, error, data } = useQuery(
+    BOOK_TITLES,
+    { variables: queryVariables },
+    { fetchPolicy: 'cache-and-network' },
+  );
 
   return (
     <>

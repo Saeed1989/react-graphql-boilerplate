@@ -5,7 +5,7 @@ const WriterOption = (props) => {
   const { onSubmit } = props;
 
   const onFinish = (values) => {
-    onSubmit(values);
+    onSubmit(values.writerOptions);
   };
 
   const availabelOptions = [

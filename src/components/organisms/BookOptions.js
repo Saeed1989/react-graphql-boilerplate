@@ -5,7 +5,7 @@ const BookOption = (props) => {
   const { onSubmit } = props;
 
   const onFinish = (values) => {
-    onSubmit(values);
+    onSubmit(values.bookOptions);
   };
 
   const availabelOptions = [

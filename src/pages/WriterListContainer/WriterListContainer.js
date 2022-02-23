@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Typography } from 'antd';
+import { Space, Typography } from 'antd';
 import { useQuery } from '@apollo/client';
 import { WRITER_NAMES } from '../../appolo/typeDefs';
 import WriterList from '../../components/organisms/WriterList';
 import WriterOption from '../../components/organisms/WriterOptions';
+import { buildGrapQlVariables } from '../../utils/convertUtils/queryUtils';
 
 const { Title } = Typography;
 
@@ -15,8 +16,13 @@ const WriterListContainer = () => {
 
   return (
     <>
-      <Title level={3}>Writer Options:</Title>
-      <WriterOption onSubmit={(options) => writerOpHandler(options)} />
+      {!options ? (
+        <>
+          <Title level={3}>Writer Options:</Title>
+          <WriterOption onSubmit={(options) => writerOpHandler(options)} />
+        </>
+      ) : null}
+
       <Title level={3}>Writer List:</Title>
       <>{!options ? <p>Please select and submit options</p> : <Writers options={options} />}</>
     </>
@@ -25,7 +31,13 @@ const WriterListContainer = () => {
 
 const Writers = (props) => {
   const { options } = props;
-  const { loading, error, data } = useQuery(WRITER_NAMES, { fetchPolicy: 'cache-and-network' });
+  const queryVariables = buildGrapQlVariables(options);
+  console.log(queryVariables);
+  const { loading, error, data } = useQuery(
+    WRITER_NAMES,
+    { variables: queryVariables },
+    { fetchPolicy: 'cache-and-network' },
+  );
 
   return (
     <>
