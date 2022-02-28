@@ -15,7 +15,7 @@ import initCache from './appolo/cache';
 
 const { Header, Footer } = Layout;
 
-function App() {
+export function App() {
   const [client, setClient] = useState();
 
   useEffect(() => {
