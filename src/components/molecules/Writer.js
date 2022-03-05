@@ -8,8 +8,8 @@ const Writer = (props) => {
     <>
       <LvItem label={'Name'} value={writer.name} />
       <LvItem label={'Country'} value={writer.country} />
-      <LvItem label={'Date of Birth'} value={ toFormattedDate(writer.dateOfBirth)} />
-      <LvItem label={'Books'} value={ arrayToString(writer.books)} />
+      <LvItem label={'Date of Birth'} value={toFormattedDate(writer.dateOfBirth)} />
+      <LvItem label={'Books'} value={arrayToString(writer.books)} />
     </>
   );
 };

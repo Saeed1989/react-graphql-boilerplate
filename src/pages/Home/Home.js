@@ -1,12 +1,8 @@
 import React from 'react';
 import { List } from 'antd';
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  // const { loading, error, data } = useQuery(BOOK_TITLES);
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error :(</p>;
-
   return (
     <div>
       <List>

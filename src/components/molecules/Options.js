@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Button, Checkbox } from 'antd';
 
 const Options = (props) => {
-  const {onSubmit, options, initialValues, formName} = props;
+  const { onSubmit, options, initialValues, formName } = props;
 
   const onFinish = (values) => {
     console.log('Success:', values);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Space, Typography } from 'antd';
+import { Typography } from 'antd';
 import { useQuery } from '@apollo/client';
 import { WRITER_NAMES } from '../../appolo/typeDefs';
 import WriterList from '../../components/organisms/WriterList';
